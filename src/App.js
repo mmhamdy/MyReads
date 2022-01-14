@@ -7,7 +7,7 @@ class MainView extends React.Component {
   render() {
     return (
       <div className="app">
-        <Library />
+        <Library title="MyReads" />
       </div>
     )
   }

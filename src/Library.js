@@ -1,14 +1,18 @@
 import React from 'react'
 import AddBooks from './AddBooks'
-import LibraryContent from './LibraryContent'
-import LibraryTitle from './LibraryTitle'
+import Shelf from './Shelf'
+// import * as BooksAPI from './BooksAPI'
 
 class Library extends React.Component {
     render() {
         return(
             <div className="list-books">
-                <LibraryTitle title='MyReads'/>
-                <LibraryContent />
+                <div className="list-books-title">
+                    <h1>{this.props.title}</h1>
+                </div>
+                <Shelf  shelfTitle="Currently Reading" shelfKey="currentlyReading"/>
+                <Shelf  shelfTitle="Want to Read" shelfKey="wantToRead"/>
+                <Shelf  shelfTitle="Read" shelfKey="read"/>
                 <AddBooks />
             </div>
         )
