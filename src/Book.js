@@ -1,4 +1,3 @@
-import React from 'react' 
 import BookPlacer from './BookPlacer'
 
 const Book = ({book, onChangeShelf}) => {
