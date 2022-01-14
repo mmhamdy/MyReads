@@ -1,18 +1,27 @@
 import React from 'react'
-import Library from './Library'
+import Shelf from './Shelf'
+import AddBooks from './AddBooks'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
-class MainView extends React.Component {
+class Library extends React.Component {
   render() {
     return (
       <div className="app">
-        <Library title="MyReads" />
+        <div className="list-books">
+          <div className="list-books-title">
+            <h1>MyReads</h1>
+          </div>
+          <Shelf  shelfTitle="Currently Reading" shelfKey="currentlyReading"/>
+          <Shelf  shelfTitle="Want to Read" shelfKey="wantToRead"/>
+          <Shelf  shelfTitle="Read" shelfKey="read"/>
+          <AddBooks />
+        </div>
       </div>
     )
   }
 }
 
-export default MainView
+export default Library
 
 
