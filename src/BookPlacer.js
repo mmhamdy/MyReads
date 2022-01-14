@@ -1,15 +1,16 @@
 import React from 'react' 
 
 class BookPlacer extends React.Component {
-    onChangeBookShelf = this.props.onChangeBookShelf;
+    book = this.props.book;
+    changeShelf = this.props.changeShelf;
 
-    handleChange = (e) => {
-        this.onChangeBookShelf(this.props.bookId, e.target.value);
+    moveBook = (e) => {
+        this.changeShelf(this.book, e.target.value);
     }
     render() {
         return(
             <div className="book-shelf-changer">
-                <select value={this.props.shelf} onChange={this.handleChange}>
+                <select value={this.props.book.shelf} onChange={this.moveBook}>
                     <option value="move" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>

@@ -12,7 +12,7 @@ const Book = ({book, onChangeShelf}) => {
                                 book.imageLinks ? book.imageLinks.thumbnail : ""
                              })`
                              }}></div>
-                        <BookPlacer bookId={book.id} shelf={book.shelf} onChangeShelf={onChangeShelf}/>
+                        <BookPlacer book={book} changeShelf={onChangeShelf}/>
                     </div>
                     <div className="book-title">{book.title}</div>
                     <div className="book-authors">{book.authors[0]}</div>
