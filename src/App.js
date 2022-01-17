@@ -1,10 +1,12 @@
 import React from 'react'
-import Shelf from './Shelf'
-import AddBooks from './AddBooks'
+import Library from './Library'
+import SearchView from './SearchView'
 import * as BooksAPI from './BooksAPI'
+import {Routes, Route} from "react-router-dom";
 import './App.css'
 
-class Library extends React.Component {
+
+class App extends React.Component {
   state = {
     books: [],
   }
@@ -24,20 +26,15 @@ class Library extends React.Component {
   render() {
     return (
       <div className="app">
-        <div className="list-books">
-          <div className="list-books-title">
-            <h1>MyReads</h1>
-          </div>
-          <Shelf  shelfTitle="Currently Reading" shelfKey="currentlyReading" books={this.state.books} onChangeShelf={this.reposition}/>
-          <Shelf  shelfTitle="Want to Read" shelfKey="wantToRead" books={this.state.books} onChangeShelf={this.reposition}/>
-          <Shelf  shelfTitle="Read" shelfKey="read" books={this.state.books} onChangeShelf={this.reposition}/>
-          <AddBooks />
-        </div>
+        <Routes>
+          <Route exact path="/" element={<Library title="MyReads: Track your readings with ease!" books={this.state.books} onChangeShelf={this.reposition} />} />
+          <Route path="/search" element={<SearchView books={this.state.books} onChangeShelf={this.reposition} />} />
+        </Routes>
       </div>
     )
   }
 }
 
-export default Library
+export default App
 
 

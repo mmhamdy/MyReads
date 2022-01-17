@@ -31,6 +31,7 @@ body, .app {
 
 .bookshelf {
   padding: 0 10px 20px;
+  list-style-type: none;
 }
 
 @media (min-width: 600px) {
