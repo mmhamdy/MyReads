@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <div className="app">
         <Routes>
-          <Route exact path="/" element={<Library title="MyReads: Track your readings with ease!" books={this.state.books} onChangeShelf={this.reposition} />} />
+          <Route exact path="/" element={<Library title="MyReads" books={this.state.books} onChangeShelf={this.reposition} />} />
           <Route path="/search" element={<SearchView books={this.state.books} onChangeShelf={this.reposition} />} />
         </Routes>
       </div>

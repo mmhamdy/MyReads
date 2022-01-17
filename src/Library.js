@@ -22,14 +22,12 @@ const Library = ({title, books, onChangeShelf}) => {
           <div className="list-books-title">
             <h1>{title}</h1>
           </div>
-          <ol className="bookshelf">
-            {
-              shelves.map(shelf => 
+          <ol className="bookshelf">            
+              {shelves.map(shelf => 
                 <li key={shelf.key}>
                   <Shelf shelfTitle={shelf.title} shelfKey={shelf.key} books={books} onChangeShelf={onChangeShelf}/>
                 </li>
-              )
-            }
+              )}            
           </ol> 
           <AddBooks />
         </div>
