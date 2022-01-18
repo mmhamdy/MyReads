@@ -10,9 +10,6 @@ class SearchView extends React.Component {
         input: "",
     }
 
-    books = this.props.books
-    onChangeShelf = this.props.onChangeShelf
-
     manageShelf = (searchBooks) => {
       const books = this.props.books;
       const searchedBooks = searchBooks;
@@ -54,6 +51,7 @@ class SearchView extends React.Component {
       }
     }
 
+    onChangeShelf = this.props.onChangeShelf
 
     render() {
         return (
