@@ -12,16 +12,34 @@ class SearchView extends React.Component {
     books = this.props.books
     onChangeShelf = this.props.onChangeShelf
 
+    manageShelf = (searchBooks) => {
+      const books = this.props.books;
+      const searchedBooks = searchBooks;
+      searchedBooks.map(searchedBook => {
+        books.map(book => {
+          if (book.id === searchedBook.id) {
+            searchedBook.shelf = book.shelf
+          } else if (searchedBook.shelf === undefined){
+            searchedBook.shelf = 'none'
+          }
+          return book
+        })
+        return searchedBook
+      })
+      return searchedBooks
+    }
+
     onSearch = (e) => {
       const query = e.target.value;
       this.setState({input: query});
       try {
         if(query.length > 0) {
           BooksAPI.search(query).then(searchBooks => {
+            const managedSearch = this.manageShelf(searchBooks) 
             if(searchBooks.error){
               this.setState({searchBooks: []})
             } else {
-              this.setState({searchBooks: searchBooks})
+              this.setState({searchBooks: managedSearch})  
             }
           })
         } else {
