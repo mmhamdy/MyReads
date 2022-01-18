@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import debounce from 'lodash.debounce'
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
 
@@ -15,6 +16,7 @@ class SearchView extends React.Component {
     manageShelf = (searchBooks) => {
       const books = this.props.books;
       const searchedBooks = searchBooks;
+
       searchedBooks.map(searchedBook => {
         books.map(book => {
           if (book.id === searchedBook.id) {
@@ -32,16 +34,18 @@ class SearchView extends React.Component {
     onSearch = (e) => {
       const query = e.target.value;
       this.setState({input: query});
+
       try {
         if(query.length > 0) {
-          BooksAPI.search(query).then(searchBooks => {
-            const managedSearch = this.manageShelf(searchBooks) 
-            if(searchBooks.error){
-              this.setState({searchBooks: []})
-            } else {
-              this.setState({searchBooks: managedSearch})  
-            }
-          })
+          debounce(
+            BooksAPI.search(query).then(searchBooks => {
+              if(searchBooks.error){
+                this.setState({searchBooks: []})
+              } else {
+                const managedSearch = this.manageShelf(searchBooks)
+                this.setState({searchBooks: managedSearch})  
+              }
+            }), 500)
         } else {
           this.setState({searchBooks: []})
         }
