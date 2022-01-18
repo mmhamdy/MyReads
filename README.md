@@ -2,6 +2,13 @@
 
 Track and organize your books now with elegance and ease. MyReads lets you organize the books you have to their corresponding virtual shelves.
 
+## Try the app
+
+To get started all you need to do:
+
+  - install all project dependencies with `npm install`
+  - start the development server with `npm start`
+
 ## Screenshots
 
 ![main page](img/screen-main.png)
