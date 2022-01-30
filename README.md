@@ -1,5 +1,7 @@
 # MyReads: A Book Tracking App
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c8c401d0-07c5-46ab-982d-fe1e943af67c/deploy-status)](https://app.netlify.com/sites/myreadslib/deploys)
+
 Track and organize your books now with elegance and ease. MyReads lets you organize the books you have to their corresponding virtual shelves.
 
 ## Try the app
