@@ -15,7 +15,7 @@ To get started and try it locally, all you need to do:
   - start the development server with `npm start`
 
 ## 🔮 Technologies
-This application was made using this wonderful technologies:
+This application was made using these wonderful technologies:
 
 &nbsp;
 <div align="center">
