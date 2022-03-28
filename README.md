@@ -2,20 +2,41 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c8c401d0-07c5-46ab-982d-fe1e943af67c/deploy-status)](https://app.netlify.com/sites/myreadslib/deploys)
 
+## 📄 About MyReads
+
 Track and organize your books now with elegance and ease. MyReads lets you organize the books you have to their corresponding virtual shelves.
 
-## Try the app
+👉[Try live demo](https://myreadslib.netlify.app/)
 
-To get started all you need to do:
+To get started and try it locally, all you need to do:
 
+  - Clone this project
   - install all project dependencies with `npm install`
   - start the development server with `npm start`
 
+## 🔮 Technologies
+This application was made using this wonderful technologies:
+
+&nbsp;
+<div align="center">
+
+![React](./doc/images/react.png)
+![Create React App](./doc/images/cra.png)
+![React Router](./doc/images/reactrouter.png)
+![Lodash](./doc/images/lodash.png)
+
+</div>
+&nbsp;
+
 ## Screenshots
 
-![main page](img/screen-main.png)
+![main page](doc/images/screen-main.png)
 
-![search page](img/screen-search.png)
+![search page](doc/images/screen-search.png)
+
+## 🏛 Architecture
+
+![Visualization of the codebase](./diagram.svg)
 
 ## Backend Server
 
